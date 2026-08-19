@@ -1,0 +1,33 @@
+# 02 — Self-improving classifier
+# ============================================================================
+# A classifier that routes inputs to one of N categories.
+# The prompt is evolved to improve accuracy on adversarial examples.
+# ============================================================================
+
+id: classifier-001
+description: A 3-class classifier that improves its own prompt.
+
+cells:
+  - id: input.text
+    kind: value
+    default: "I love this product, it changed my life!"
+    description: The text to classify
+
+  - id: classify
+    kind: ai
+    ai_kind: ai.llm
+    provider: zai
+    model: glm-4.5
+    prompt: |
+      Classify the following text as POSITIVE, NEGATIVE, or NEUTRAL.
+      Respond with just the label.
+
+      Text: {{input.text}}
+
+      Label:
+    temperature: 0
+    description: The classification (this gets evolved)
+
+  - id: output
+    kind: value
+    value: 'classify.value'

@@ -1,0 +1,39 @@
+# 01 — Self-improving summarizer
+# ============================================================================
+# A Quilt sheet that summarizes text. The prompt for the LLM is the
+# thing that gets evolved. The judge scores on conciseness + accuracy.
+#
+# Run:
+#   const result = await evolve({
+#     system: new QuiltSystem({ engine, inputCell: 'input.text', outputCell: 'summary' }),
+#     generator: new LLMGenerator({ ai, task: '...' }),
+#     judge: new LLMJudge({ ai, task: '...', criteria: ['conciseness', 'accuracy'] }),
+#     mutator: new LLMMutator({ ai, task: '...', capabilities: ['prompt'] }),
+#     scope: new CellScope({ cellId: 'summary', capabilities: ['prompt'] }),
+#     iterations: 5,
+#     populationSize: 3,
+#   });
+# ============================================================================
+
+id: summarizer-001
+description: A summarizer sheet that improves its own prompt over time.
+
+cells:
+  - id: input.text
+    kind: value
+    default: "Quilt is a reactive, typed, cellular runtime. It takes the spreadsheet model — a grid of named, reactive cells — and turns it into a general-purpose runtime. The same sheet can be deployed to a browser, a server, an edge function, a microcontroller, or a peer-to-peer mesh."
+    description: The text to summarize
+
+  - id: summary
+    kind: ai
+    ai_kind: ai.summarize
+    provider: zai
+    model: glm-4.5
+    input: input.text
+    max_words: 30
+    description: The summary (this is what gets evolved)
+
+  - id: output
+    kind: value
+    value: 'summary.value'
+    description: The output of the summarizer

@@ -1,0 +1,75 @@
+# 03 — Self-improving router
+# ============================================================================
+# A router that decides which downstream cell to invoke. Evolves its
+# rules to improve routing accuracy.
+#
+# The scope here is the WHOLE sheet, so the mutator can change anything:
+#   - the router conditions
+#   - the prompts of downstream cells
+#   - the structure (add/remove cells)
+# ============================================================================
+
+id: router-001
+description: A smart router that learns better routing rules.
+
+cells:
+  - id: input.request
+    kind: value
+    default: "translate hello to french"
+    description: A natural-language request
+
+  - id: intent
+    kind: ai
+    ai_kind: ai.llm
+    provider: zai
+    model: glm-4.5
+    prompt: |
+      What is the user's intent? Respond with one of:
+        - translate (user wants to translate text)
+        - summarize (user wants a summary)
+        - code (user wants code)
+        - unknown (can't tell)
+
+      Request: {{input.request}}
+
+      Intent:
+    description: Extract the intent
+
+  - id: route
+    kind: router
+    routes:
+      - when: 'intent.value && intent.value.toLowerCase().includes("translate")'
+        then: "do.translate"
+      - when: 'intent.value && intent.value.toLowerCase().includes("summar")'
+        then: "do.summarize"
+      - when: 'intent.value && intent.value.toLowerCase().includes("code")'
+        then: "do.code"
+      - then: "do.unknown"
+
+  - id: do.translate
+    kind: ai
+    ai_kind: ai.translate
+    provider: zai
+    model: glm-4.5
+    input: input.request
+    target: fr
+
+  - id: do.summarize
+    kind: ai
+    ai_kind: ai.summarize
+    provider: zai
+    model: glm-4.5
+    input: input.request
+    max_words: 50
+
+  - id: do.code
+    kind: ai
+    ai_kind: ai.code
+    provider: zai
+    model: glm-4.5
+    input: input.request
+    language: typescript
+
+  - id: do.unknown
+    kind: value
+    value: "I don't understand the request."

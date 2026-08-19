@@ -1,0 +1,44 @@
+{
+  "name": "@quilt/evolve",
+  "version": "0.1.0",
+  "description": "Self-improvement loops for Quilt. LLMs as adversarial input generators and output judges. Evolve any scope — a cell, an organ, or a whole organism.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./loop": "./dist/loop.js",
+    "./generator": "./dist/generator.js",
+    "./judge": "./dist/judge.js",
+    "./mutate": "./dist/mutate.js",
+    "./scope": "./dist/scope.js",
+    "./system": "./dist/system.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "node test/*.test.js",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "quilt",
+    "reactive",
+    "evolution",
+    "rlaif",
+    "self-improvement",
+    "adversarial",
+    "llm",
+    "optimization"
+  ],
+  "author": "SuperInstance",
+  "license": "MIT",
+  "dependencies": {
+    "@quilt/core": "workspace:*",
+    "@quilt/ai": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

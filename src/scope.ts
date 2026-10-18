@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — scope
+ * @superinstance/quilt-evolve — scope
  * ============================================================================
  * The Scope defines WHAT part of the system is being evolved.
  *

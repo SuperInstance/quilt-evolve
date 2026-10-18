@@ -1,5 +1,5 @@
 /**
- * Tests for @quilt/evolve — uses mock AI engine (no real API calls).
+ * Tests for @superinstance/quilt-evolve — uses mock AI engine (no real API calls).
  */
 
 const assert = require("assert");

@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — loop
+ * @superinstance/quilt-evolve — loop
  * ============================================================================
  * The main improvement loop. Runs N iterations of:
  *

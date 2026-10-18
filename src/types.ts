@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — types
+ * @superinstance/quilt-evolve — types
  * ============================================================================
  * The type system for self-improvement loops.
  *

@@ -1,4 +1,4 @@
-# @quilt/evolve — self-improvement loops for Quilt
+# @superinstance/quilt-evolve — self-improvement loops for Quilt
 
 > **4 components. 1 loop. Any scope.**
 
@@ -34,7 +34,7 @@ Self-improvement loops for Quilt sheets. LLMs as adversarial input generators an
 ## Install
 
 ```bash
-npm install @quilt/evolve
+npm install @superinstance/quilt-evolve
 ```
 
 ## Quick start
@@ -42,8 +42,8 @@ npm install @quilt/evolve
 ```typescript
 import {
   evolve, FunctionSystem, LLMGenerator, LLMJudge, LLMMutator, CellScope,
-} from '@quilt/evolve';
-import { AIEngine } from '@quilt/ai';
+} from '@superinstance/quilt-evolve';
+import { AIEngine } from '@superinstance/quilt-ai';
 
 const ai = new AIEngine({ zaiKey: process.env.ZAI_TOKEN });
 
@@ -223,14 +223,14 @@ npm test
 
 ## Part of Quilt
 
-`@quilt/evolve` is the 14th package in the Quilt ecosystem:
+`@superinstance/quilt-evolve` is the 14th package in the Quilt ecosystem:
 
 | Package | Description |
 |---------|-------------|
-| [@quilt/core](https://github.com/SuperInstance/quilt) | Reactive engine |
+| [@superinstance/quilt-core](https://github.com/SuperInstance/quilt) | Reactive engine |
 | [@quilt/cli](https://github.com/SuperInstance/quilt) | CLI + MCP server |
-| [@quilt/ai](https://github.com/SuperInstance/quilt-ai) | AI cells (4 providers, 8 kinds) |
-| **@quilt/evolve** (this) | Self-improvement loops |
+| [@superinstance/quilt-ai](https://github.com/SuperInstance/quilt-ai) | AI cells (4 providers, 8 kinds) |
+| **@superinstance/quilt-evolve** (this) | Self-improvement loops |
 | [quilt-rust](https://github.com/SuperInstance/quilt-rust) | Sync + async engine |
 | [quilt-live](https://github.com/SuperInstance/quilt-live) | Single-file, offline |
 | [quilt-cloudflare](https://github.com/SuperInstance/quilt-cloudflare) | Edge-native |

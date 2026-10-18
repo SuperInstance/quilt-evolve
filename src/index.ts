@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve
+ * @superinstance/quilt-evolve
  * ============================================================================
  * Self-improvement loops for Quilt.
  *
@@ -19,8 +19,8 @@
  *
  * Usage:
  *
- *   import { evolve, LLMGenerator, LLMJudge, LLMMutator, CellScope } from '@quilt/evolve';
- *   import { AIEngine } from '@quilt/ai';
+ *   import { evolve, LLMGenerator, LLMJudge, LLMMutator, CellScope } from '@superinstance/quilt-evolve';
+ *   import { AIEngine } from '@superinstance/quilt-ai';
  *
  *   const ai = new AIEngine({ zaiKey: process.env.ZAI_TOKEN });
  *   const system = new FunctionSystem({ name: 'summarizer', fn: myFn });

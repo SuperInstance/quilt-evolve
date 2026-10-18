@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — system adapter
+ * @superinstance/quilt-evolve — system adapter
  * ============================================================================
  * Wraps a Quilt sheet (or any function) as a System that can be evolved.
  *

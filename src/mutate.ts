@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — mutator
+ * @superinstance/quilt-evolve — mutator
  * ============================================================================
  * The Mutator applies feedback to the system. It uses an LLM to:
  *   1. Look at the scores and feedback from this iteration

@@ -22,5 +22,5 @@ updates:
         update-types: ["major"]
     # Ignore major bumps for runtime libs we control
     ignore:
-      - dependency-name: "@quilt/*"
+      - dependency-name: "@superinstance/*"
         update-types: ["version-update:semver-major"]

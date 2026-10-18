@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — generator
+ * @superinstance/quilt-evolve — generator
  * ============================================================================
  * The Generator creates adversarial inputs. It uses an LLM to:
  *   1. Look at the previous iteration's outputs and scores
@@ -23,7 +23,7 @@
 
 import type { Generator, GeneratorContext, Datum } from "./types.js";
 
-/** A minimal AI engine interface (compatible with @quilt/ai's AIEngine). */
+/** A minimal AI engine interface (compatible with @superinstance/quilt-ai's AIEngine). */
 export interface AIEngineLike {
   call(config: any, opts?: { useCache?: boolean; signal?: AbortSignal }): Promise<any>;
 }

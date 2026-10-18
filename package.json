@@ -1,5 +1,5 @@
 {
-  "name": "@quilt/evolve",
+  "name": "@superinstance/quilt-evolve",
   "version": "0.1.0",
   "description": "Self-improvement loops for Quilt. LLMs as adversarial input generators and output judges. Evolve any scope — a cell, an organ, or a whole organism.",
   "main": "dist/index.js",
@@ -31,8 +31,7 @@
   "author": "SuperInstance",
   "license": "MIT",
   "dependencies": {
-    "@quilt/core": "workspace:*",
-    "@quilt/ai": "workspace:*"
+    "@superinstance/quilt-core": "^0.3.3"
   },
   "devDependencies": {
     "typescript": "^7.0.2",
@@ -40,5 +39,13 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "peerDependencies": {
+    "@superinstance/quilt-ai": "*"
+  },
+  "peerDependenciesMeta": {
+    "@superinstance/quilt-ai": {
+      "optional": true
+    }
   }
 }

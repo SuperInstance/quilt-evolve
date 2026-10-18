@@ -1,5 +1,5 @@
 /**
- * @quilt/evolve — judge
+ * @superinstance/quilt-evolve — judge
  * ============================================================================
  * The Judge scores (input, output) pairs. It uses an LLM to:
  *   1. Compare the output to the expected output (if known)
